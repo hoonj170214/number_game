@@ -21,11 +21,27 @@
     <p>1~100까지 랜덤 숫자를 선택하세요.더 높은지 더 낮은지 말씀드릴게요.</p>
     <form class="form">
       <label for="guessField"
-        >추측 숫자를 입력하세요</label><input type="text" id="guessField"
-      /><input type="submit" value="submit"/>
+        >추측 숫자를 입력하세요</label><input type="text" id="guessField" class="guessField"
+      /><input type="submit" value="submit" class="guessSubmit"/>
     </form>
 
       <!-- 결과창 -->
       <div class="resultParas"><p class="guesses"><p class="lastResult"><p class="lowOrHigh"></p></p></p></div>
+      <script>
+        //1. 1에서 100까지 랜덤한 숫자(정수)를 반환하는 변수 randomNumber를 선언하고 초기화하세요. math.random은 0부터 1까지 난수를 생성하는 것이고, 제일 작은 숫자가 1이니까 뒤에 +1을 해줘야 한다. 
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+        //2. DOM 요소 5가지를 선택해서 변수로 선언해주세요. guesses, lastResult, lowOrHigh, guessSubmit, guessField
+        const guesses = document.querySelector(".guesses");
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHigh = document.querySelector('.lowOrHigh');
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        //3. 변수 2가지를 선언(let)해주세요. guessCount 초기값 1, restButton 선언만
+        let guessCount = 1;
+        let restButton;
+
+      </script>
   </body>
 </html>
