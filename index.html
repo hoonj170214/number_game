@@ -45,13 +45,14 @@
 
         //4. 올바른 번호인지 확인하는 함수를 만들기 -> checkGuess
         function checkGuess(event) {
+          console.log(event);
+          event.preventDefault();
+          const userGuess = Number(guessField.value);
           if(randomNumber===userGuess){
-            event.preventDefault();
             //사용자가 추측한 번호를 알아내는 변수 -> userGuess
             //제약사항(1) : 1에서 100까지 숫자로만 받기
             //게임 오버 : 게임이 끝나는 로직
 
-            const userGuess = Number(guessField.value);
             lastResult.textContent = '축하합니다';
             // setGameOver();
             // 추측창을 사용할 수 없게
@@ -61,13 +62,13 @@
             //생성한 DOM 요소 이름(텍스트 컨텐츠)을 '새 게임하기'로 바꾸기
             resetButton.textContent = '새 게임하기';
             //만든 DOM 버튼을 body 태그 안에 추가하기
-            document.body.appendChild = resetButton;
+            document.body.appendChild(resetButton);
             //const userGuess = window.KeyboardEvent('inputNum');
             //addEventListener(onkeydown,inputNum(e){
 
             //})
 
-          }else if(condition){
+          }else if(false){
 
           }else{
 
@@ -75,7 +76,7 @@
         }
         
       
-        guessSubmit.addEventListener('onClick', checkGuess());
+        guessSubmit.addEventListener('Click', checkGuess);
         /*
         1에서 100 사이의 난수를 생성합니다.
 플레이어가 켜져 있는 턴 번호를 기록합니다. 1에서 시작하십시오.
